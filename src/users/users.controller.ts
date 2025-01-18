@@ -12,8 +12,8 @@ export class UsersController {
   getAllUsers(): UserDto[] {
     // Example data
     return [
-      { id: 1, name: 'John Doe', email: 'john.doe@example.com', password: 'password123', createdAt: new Date(), updatedAt: new Date() },
-      { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com', password: 'password456', createdAt: new Date(), updatedAt: new Date() },
+      { id: 1, name: 'John Doe', email: 'john.doe@example.com', password: 'password123'},
+      { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com', password: 'password456'},
     ];
   }
 
@@ -24,7 +24,7 @@ export class UsersController {
   @ApiResponse({ status: 404, description: 'User not found' })
   getUserById(@Param('id') id: number): UserDto {
     // Example data
-    return { id, name: 'John Doe', email: 'john.doe@example.com', password: 'password123', createdAt: new Date(), updatedAt: new Date() };
+    return { id, name: 'John Doe', email: 'john.doe@example.com', password: 'password123'};
   }
 
   // POST create a new user
@@ -33,6 +33,6 @@ export class UsersController {
   @ApiResponse({ status: 201, description: 'User created successfully', type: UserDto })
   createUser(@Body() user: UserDto): UserDto {
     // Example data (simulating user creation)
-    return { ...user, id: 3, createdAt: new Date(), updatedAt: new Date() };
+    return { ...user, id: 3 };
   }
 }
